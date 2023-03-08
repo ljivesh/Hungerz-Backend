@@ -8,9 +8,8 @@ const Item = require('./models/itemModel');
 const app = express();
 
 const corsOptions ={
-  origin:'https://hungerz-backend.onrender.com', 
+  origin:'http://localhost:5173', 
   credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
 };
 
 app.use(cors(corsOptions));
