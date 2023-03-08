@@ -63,9 +63,9 @@ router.post('/placeorder', async (req, res)=> {
 
 });
 
-router.get('/getuserorders', async (req, res)=> {
+router.get('/getuserorders/:userID', async (req, res)=> {
     
-    const {userID} = req.body;
+    const userID = req.params.userID;
     
     try {
         
