@@ -6,13 +6,7 @@ const Item = require('./models/itemModel');
 
 
 const app = express();
-
-const corsOptions ={
-  origin:'http://localhost:5173', 
-  credentials:true,            //access-control-allow-credentials:true
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 
 const itemsRoute = require('./routes/itemsRoute');
