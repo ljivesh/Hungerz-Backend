@@ -34,7 +34,7 @@ router.post('/placeorder', async (req, res)=> {
             const newOrder = new Order({
                 name: currentUser.name,
                 email: currentUser.email,
-                userId: currentUser._id,
+                userID: currentUser._id,
                 
                 orderItems: cartItems,
                 orderAmount: totalAmount,
@@ -65,11 +65,11 @@ router.post('/placeorder', async (req, res)=> {
 
 router.get('/getuserorders', async (req, res)=> {
     
-    const {userid} = req.body;
+    const {userID} = req.body;
     
     try {
         
-        const orders = await Order.find({userid: userid}).sort({_id: -1});
+        const orders = await Order.find({userID: userID}).sort({_id: -1});
         res.send(orders);
 
     } catch (error) {
